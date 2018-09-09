@@ -1,0 +1,445 @@
+/*pref-payments*/
+.pay-safe-column {background: url("https://static.mercadoshops.com/static/images/paymethods/mla-paymtehods.png") no-repeat scroll 0 -380px transparent;float: left;height: 15px;margin:0 0 15px 5px;padding: 8px 0 0 25px; line-height:10px;}
+.pay-safe{background: url("https://static.mercadoshops.com/static/images/paymethods/mla-paymtehods.png") no-repeat 0 -380px; height:22px; padding-left: 21px; line-height: 25px;margin-left: 3px}
+.pref-payments span, .payMethod span{display:block; text-indent: -9999px; padding: 0; margin: 2px 0 0 5px;opacity:.8; width:55px; height:27;}
+#mpTitle, #custTitle{margin:0 0 15px 48px; font-size:14px}
+.mpcards{line-height: 25px}
+.mpcards p.description{padding-top: 3px;}
+.paymentCustomName{font-size: 13px; color:#333; margin: 0 8px; padding-top:3px !important;}
+.customCheck, .paymentCustomName, .customActiveActions{float:left;}
+.instructions{clear:left;font-size: 11px; padding:5px 0 0 25px !important;}
+.customActiveActions, .customDeleteActions {padding-top:5px;}
+#noPayMethods {margin: 0 0 0 60px;}
+.customPaymentNot{margin-bottom: 15px}
+.paymentCustomName label.label-check{margin-right:0;top:2px;}
+section#payMethod span.mpPayment, aside#payMethod span.mpPayment{width:97px;}
+section#payMethod p.pay-safe { margin:10px 0; }
+section#payMethod ul#payMethod, aside#payMethod ul#payMethod{padding:11px 0 0 0; display:inline-block;margin-bottom: 15px}
+aside#payMethod ul#payMethod li{list-style-type: none}
+aside#payMethod ul#payMethod{margin-bottom: 5px}
+div.shippingPaymethodContent{display:block;}
+.mpSubTitle{margin-top: 8px;font-weight: normal;}
+
+/*Feedback VOP*/
+fieldset.pref-payments p.comments {background: url("https://static.mercadoshops.com/static/images/spriteMsj.png") no-repeat scroll 0 -85px transparent;height: 16px;margin: 0;padding: 0 0 0 15px; line-height: 18px; position:absolute;right:10px;}
+
+
+/*modal create edit custom paymethod*/
+.buttons-controls{text-align: center;margin:30px 0 15px 0}
+.buttons-controls a{margin-right: 8px}
+div.editCreateModal p.ch-form-row.ch-form-required textarea.instructions{padding:4px !important;}
+div.editCreateModal p.ch-form-row.ch-form-required label{color:#333; float:left; width:120px;text-align: right; padding-top: 3px;margin-right: 5px}
+div.editCreateModal p.example{padding-left: 128px; margin:5px 0 15px 0;width:400px;}
+div.editCreateModal{padding-top: 15px}
+div.editCreateModal input.name{width:300px;}
+div.editCreateModal p.error {
+	color: red;
+	font-size: 11px;
+	display: none;
+    position: relative;
+    padding-left: 128px;
+    margin:5px 0 0 0;
+    width:400px;
+    left:120px;
+}
+
+/* buttons addmethod
+-------------------------------------------------------------- */
+.btn.addMethod{
+	padding:4px 10px !important;
+	background: -webkit-linear-gradient(#55B1D1, #448CA6);
+	background: -moz-linear-gradient(#55B1D1, #448CA6);
+	background: -o-linear-gradient(#55B1D1, #448CA6);
+	background: linear-gradient(#55B1D1, #448CA6);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55B1D1', endColorstr='#448CA6',GradientType=0 ); /* IE6-8 */
+	-webkit-box-shadow: inset 0px 1px rgba(186, 206, 255, .6);
+	box-shadow: 0 1px #75D8FF inset;
+	border: 1px solid #226C8F;
+	font-size: 13px;
+	color: #FFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+	font-family: Arial, Helvetica, sans-serif;
+	margin:10px 0 20px 60px
+}
+
+.btn.addMethod.disabled,.btn.addMethod.disabled:hover{
+	background: -webkit-linear-gradient(#55B1D1,#448CA6);
+	background: -moz-linear-gradient(#55B1D1,#448CA6);
+	background: -o-linear-gradient(#55B1D1,#448CA6);
+	background: linear-gradient(#55B1D1,#448CA6);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55B1D1', endColorstr='#448CA6',GradientType=0 ); /* IE6-8 */
+	border: 1px solid #226C8F !important;
+	-webkit-box-shadow: inset 0 1px #FEFEFE;
+	box-shadow: inset 0 1px rgba(240, 240, 240, 1);
+	color: white !important;
+	cursor: not-allowed;
+	opacity: .5;
+	text-shadow: none;
+	margin:10px 0 20px 60px;
+}
+.btn.btn-hover.disabled, .btn.btn-active.disabled, .btn:disabled, .btn:disabled:hover, .btn:disabled:active, .btn.skin.disabled{
+background-color: #d8d8d8;
+background-position: 0 -274px;
+border: #226C8F 1px solid;
+opacity: 0.3;
+color: #fff;
+text-shadow: none;}
+
+/*MLA*/
+[class*='card-MLA-'] {background: url("https://static.mercadoshops.com/static/images/paymethods/mla-paymtehods.png") no-repeat; width: 30px;}
+.card-MLA-visa{background-position: 0 0}
+.card-MLA-master{background-position: 0 -27px; height: 23px !important;}
+.card-MLA-amex{background-position: 0 -53px; height: 23px !important;}
+.card-MLA-naranja{background-position: -1px -79px}
+.card-MLA-tarshop{background-position: 0 -108px; height: 20px !important;}
+.card-MLA-cencosud{background-position: 0 -135px}
+.card-MLA-cabal{background-position: 0 -162px; height: 27px !important;}
+.card-MLA-diners{background-position: 2px -462px}
+.card-MLA-argencard{background-position: 3px -188px; height: 26px !important;}
+.card-MLA-pagofacil{background-position: 0 -215px}
+.card-MLA-rapipago{background-position: 0 -244px; width: 65px !important; height: 25px !important;}
+.card-MLA-bapropagos{background-position: -3px -324px; width: 59px !important;}
+.card-MLA-redlink{background-position: 0 -269px}
+.card-MLA-banelco{background-position: 0 -297px; width: 32px;}
+.card-MLA-nativa {background-position: 0 -435px; width: 50px; height: 20px !important;}
+.card-MLA-maestro{background-position: 0 -499px; height: 27px !important; width: 34px !important;}
+.card-MLA-debcabal{background-position: 0 -533px}
+.card-MLA-debmaster{background-position: 0 -603px;}
+.card-MLA-debvisa{background-position: -2px -569px; width: 65px !important;}
+.card-MLA-cordial{background-position: -1px -679px; width: 70px !important;}
+.card-MLA-cordobesa{background-position: -2px -718px; width: 68px !important;}
+.card-MLA-cargavirtual{background-position: -1px -759px; height: 27px !important;}
+.card-MLA-cmr{background-position: -1px -639px; width: 37px !important;}
+
+
+#payMethod .card-MLA-visa{background-position: 0 0}
+#payMethod .card-MLA-master{background-position: 0 -27px; height: 23px !important;}
+#payMethod .card-MLA-amex{background-position: 0 -53px; height: 23px !important;}
+#payMethod .card-MLA-naranja{background-position: -1px -79px}
+#payMethod .card-MLA-tarshop{background-position: 0 -108px; height: 20px !important;}
+#payMethod .card-MLA-cencosud{background-position: 0 -135px}
+#payMethod .card-MLA-cabal{background-position: 0 -162px; height: 27px !important;}
+#payMethod .card-MLA-diners{background-position: 2px -462px}
+#payMethod .card-MLA-argencard{background-position: 3px -188px; height: 26px !important;}
+#payMethod .card-MLA-pagofacil{background-position: 0 -215px}
+#payMethod .card-MLA-rapipago{background-position: 0 -244px; width: 65px !important; height: 25px !important;}
+#payMethod .card-MLA-bapropagos{background-position: -3px -324px; width: 59px !important;}
+#payMethod .card-MLA-redlink{background-position: 0 -269px}
+#payMethod .card-MLA-banelco{background-position: 0 -297px; width: 32px;}
+#payMethod .card-MLA-nativa {background-position: 0 -435px; width: 50px; height: 20px !important;}
+#payMethod .card-MLA-maestro{background-position: 0 -499px; height: 27px !important; width: 34px !important;}
+#payMethod .card-MLA-debcabal{background-position: 0 -533px}
+#payMethod .card-MLA-debmaster{background-position: 0 -603px;}
+#payMethod .card-MLA-debvisa{background-position: -2px -569px; width: 65px !important;}
+#payMethod .card-MLA-cordial{background-position: -1px -679px; width: 70px !important;}
+#payMethod .card-MLA-cordobesa{background-position: -2px -718px; width: 68px !important;}
+#payMethod .card-MLA-cargavirtual{background-position: -1px -759px;  height: 27px !important;}
+#payMethod .card-MLA-cmr{background-position: -1px -639px; width: 37px !important;}
+
+/*MLB*/
+.card-MLB-visa,.card-MLB-master,.card-MLB-hipercard,.card-MLB-amex,.card-MLB-diners,.card-MLB-elo,.card-MLB-aura,.card-MLB-melicard,.card-MLB-bolbradesco {background: url("https://static.mercadoshops.com/static/images/paymethods/mlb-paymtehods.png") no-repeat; width: 30px;}
+.card-MLB-visa{background-position: 1px -1px}
+.card-MLB-master{background-position: 2px -28px}
+.card-MLB-hipercard{background-position: 1px -55px;width:46px;}
+.card-MLB-amex{background-position: 4px -83px}
+.card-MLB-diners{background-position: 3px -110px;}
+.card-MLB-elo{background-position: 7px -137px}
+.card-MLB-aura{background-position: 1px -165px}
+.card-MLB-melicard{background-position: 0px -191px}
+.card-MLB-bolbradesco{background-position: 2px -218px;width:37px;}
+/*MLB-shipping big cards*/
+ul#payMethod{padding-left:15px;margin-bottom:65px;list-style: outside}
+ul.mp-promo-mlb li{width:100px;height:55px;float:left !important;text-indent:-9999px;background: url(https://static.mercadoshops.com/static/images/spriteCardsMlbBig.png) no-repeat;}
+ul.mp-promo-mlb li.card-mlb-big-visa{background-position:0 0}
+ul.mp-promo-mlb li.card-mlb-big-master{background-position:0 -50px}
+ul.mp-promo-mlb li.card-mlb-big-hiperdcard{background-position:0 -99px}
+ul.mp-promo-mlb li.card-mlb-big-amex{background-position:0 -203px}
+ul.mp-promo-mlb li.card-mlb-big-elo{background-position:0 -153px}
+ul.mp-promo-mlb li.card-mlb-big-melicard{background-position:0 -252px}
+/*MLM*/
+.card-MLM-visa,.card-MLM-master,.card-MLM-amex,.card-MLM-oxxo,.card-MLM-bancomer,.card-MLM-banamex,.card-MLM-serfin,.card-MLM-debmaster,.card-MLM-debvisa,.card-MLM-sivale {background: url("https://static.mercadoshops.com/static/images/paymethods/mlm-paymtehods.png") no-repeat; width: 30px;}
+.card-MLM-visa{background-position: 1px -2px}
+.card-MLM-master{background-position: 1px -29px}
+.card-MLM-oxxo{background-position: 0 -163px; width:43px;}
+.card-MLM-amex{background-position: 1px -55px}
+.card-MLM-bancomer{background-position: 1px -84px;width:93px}
+.card-MLM-banamex{background-position: 0 -111px;width:93px}
+.card-MLM-serfin{background-position: 4px -137px;width:93px}
+.card-MLM-debmaster{background-position: 2px -191px;width:71px}
+.card-MLM-debvisa{background-position: 0 -221px;width:76px}
+.card-MLM-sivale{background-position: 1px -244px;width:51px;}
+/*MLM-shipping big cards*/
+ul.mp-promo-mlm {margin-left:5px;}
+ul.mp-promo-mlm li{height:35px;clear:both;background: url(https://static.mercadoshops.com/static/images/sprite_mlm_12x.png) no-repeat;margin:15px 0;padding:0 0 0 90px;line-height:38px }
+ul.mp-promo-mlm li.card-mlm-big-visa{background-position:0 0}
+ul.mp-promo-mlm li.card-mlm-big-master{background-position:4px -37px}
+ul.mp-promo-mlm li.card-mlm-big-amex{background-position:4px -78px}
+ul.mp-promo-mlm li.card-mlm-big-santander{background-position:0px -115px;padding:0 0 0 100px}
+/*MLV*/
+.card-MLV-visa,.card-MLV-master,.card-MLV-provincial,.card-MLV-mercantil,.card-MLV-venezuela{background: url("https://static.mercadoshops.com/static/images/paymethods/mlv-paymtehods.png") no-repeat; width: 30px;}
+.card-MLV-visa{background-position: 1px -2px}
+.card-MLV-master{background-position: 1px -28px}
+.card-MLV-provincial{background-position: 0 -109px;width:93px}
+.card-MLV-mercantil{background-position: 0 -55px;width:63px}
+.card-MLV-venezuela{background-position: 1px -83px;width:95px}
+/*MCO*/
+.card-MCO-visa,.card-MCO-master,.card-MCO-amex,.card-MCO-diners{background: url("https://static.mercadoshops.com/static/images/paymethods/mco-paymtehods.png") no-repeat; width: 30px;}
+.card-MCO-visa{background-position: 1px -2px}
+.card-MCO-master{background-position: 1px -28px}
+.card-MCO-amex{background-position: 1px -56px}
+.card-MCO-diners{background-position: 3px -82px}
+/*MLC*/
+.card-MLC-visa,.card-MLC-master,.card-MLC-amex,.card-MLC-diners,.card-MLC-servipag,.card-MLC-magna,.card-MLC-presto{background: url("https://static.mercadoshops.com/static/images/paymethods/mlc-paymtehods.png") no-repeat; width: 30px;}
+.card-MLC-visa{background-position: 1px -1px}
+.card-MLC-master{background-position: 1px -27px}
+.card-MLC-amex{background-position: 1px -55px}
+.card-MLC-diners{background-position: 3px -83px}
+.card-MLC-servipag{background-position: 1px -163px;width:50px;}
+.card-MLC-magna{background-position: -1px -110px}
+.card-MLC-presto{background-position: -1px -136px}
+/*VIP*/
+span.mpPayment{background:url("https://static.mercadoshops.com/static/images/paymethods/mla-paymtehods.png") no-repeat 0 -405px; line-height: 16px;height:26px;display:block; text-indent: -9999px; width:97px; margin-top: 0; cursor: pointer}
+p.ch-points-ltrt{cursor: pointer}
+.paymethodsVipContent{display:block;clear:left;}
+.paymethodsVipContent p.pay-safe{width:170px;}
+/*NewStyles for newVip*/
+.PaymentList{margin: 10px 0; font-size: 13px; margin-bottom: 25px}
+.PaymentList a {text-decoration:underline;color:#666;}
+.PaymentList li{margin-bottom: 24px; line-height: 21px;}
+.PaymentList li + .ShippingData {margin-bottom: 16px;}
+.PaymentList li.paymentsMP {position:relative; margin-bottom: 10px;}
+.PaymentList li .ch-icon-credit-card {position:absolute; left:0;}
+.PaymentList li.ShippingData {clear:both; display:block;}
+.PaymentList li.PaymentAll{display: inline-block;}
+.PaymentList i{
+	color: #666;
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+	padding-right: 5px;
+}
+.customVipPaymethods{display: inline-block;}
+.customVipPaymethods li{display:inline;padding:0 3px; border-right: 1px solid #777; }
+.customVipPaymethods li:first-child{padding-left: 0;}
+.customVipPaymethods li:last-child{border-right: none}
+.has-payment-plan .MPVipPaymethods{display:inline-block;}
+.MPVipPaymethods li{list-style-type: none; display:inline-block; margin-bottom: 0; opacity:0.6;height:25px;}
+.MPVipPaymethods li span{text-indent: -9999px; display:block;}
+
+
+/*ModalMorePayment*/
+.PaymentModal {font-size:13px; color:#333;min-width: 350px;margin-bottom:-20px;}
+.PaymentModal .MPVipPaymethods {display:block;padding-left:0;margin-top:5px !important;}
+.PaymentModal .tcList, .PaymentModal .offList, .PaymentModal .customModalPaymethods {margin-bottom:10px;}
+.PaymentModal ul:last-child{margin-bottom:20px;margin-top:0px;}
+.PaymentModal .methodsTitle {font-weight: bold}
+.PaymentModal .customModalPaymethods {list-style: disc}
+.PaymentModal .customModalPaymethods li{margin-left:15px;line-height:30px;}
+.PaymentModal .customModalPaymethods li:first-child {list-style: none;margin-left:0;}
+.PaymentModal .tcList li, .PaymentModal .offList li {list-style: disc; margin-left:15px;}
+.PaymentModal .tcList .MPVipPaymethods li, .PaymentModal .offList .MPVipPaymethods li{list-style: none;margin-left:0;}
+.PaymentModal span.MpagoLogo{background: url("https://static.mercadoshops.com/static/images/paymethods/mla-paymtehods.png") no-repeat 0 -405px; display:inline-block; text-indent: -9999px; height:26px;margin-bottom: 5px;width:100px;}
+.PaymentModal .MPLinkPromo {float:right;font-size:11px;}
+.ch-layer-content .ch-hide{display:block;}
+
+/*CART*/
+.pmethod-carrito li.mpcards{list-style-type: none; margin-bottom: 7px}
+.component.payMethod ul#payMethod.pmethod-carrito{padding:0}
+/*
+ *Promos MercadoPago
+ */
+.component.promoMP.payMethod{border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;padding: 10px 0 0 0;position:relative;margin:10px 0;}
+.component.promoMP.payMethod h4{margin:0;height:25px; line-height:20px;float:left;}
+.component.promoMP.payMethod ul{display:block;margin-bottom:5px;float:left;height:auto;}
+.component.promoMP.payMethod li {background-repeat: no-repeat;float: left;margin: 0 5px 5px 5px;}
+.component.promoMP.payMethod .banks li span {background: url("https://static.mercadoshops.com/static/images/sprite-bancos-mla.png") no-repeat scroll 0 0 transparent;display: block;padding:0;}
+.component.promoMP.payMethod #mp-promos-layer {white-space:nowrap;}
+.component.promoMP.payMethod p.more{float:left;margin-bottom: 5px;width:100%;text-align: center}
+/*MLA*/
+.component.promoMP.payMethod li span.bco-provincia {background-position: 0 -131px;width: 78px;}
+.component.promoMP.payMethod li span.patagonia {background-position: 7px -52px;width: 78px;}
+.component.promoMP.payMethod li span.nacion {background-position: -2px -29px;width: 103px;}
+.component.promoMP.payMethod li span.itau {background-position: 8px -75px;height: 18px;width: 78px;padding:3px 0}
+.component.promoMP.payMethod li span.hipotecario {background-position: 0 -107px;width: 73px;}
+.component.promoMP.payMethod li span.icbc {background-position: 0 -182px;width: 57px;}
+.component.promoMP.payMethod li span.macro {background-position: -2px -158px;width: 69px;}
+.component.promoMP.payMethod li span.tshopping {background-position: 0 -208px;height: 18px;width: 78px;padding:3px 0}
+/*MLB*/
+.component.promoMP.payMethod .banks-mlb li span {background: url("https://static.mercadoshops.com/static/images/spriteCardsMlb.png") no-repeat scroll 0 0 transparent;display: block;padding: 10px 0;height:10px;}
+.component.promoMP.payMethod li span.elo-mlb {background-position: 0 -143px;width: 78px;}
+.component.promoMP.payMethod li span.visa-mlb {background-position: 7px -33px;width: 78px;}
+.component.promoMP.payMethod li span.master-mlb {background-position: -3px -64px;width: 58px;}
+.component.promoMP.payMethod li span.hipercard-mlb {background-position: 8px -99px;width: 78px;}
+
+.pref-payments .list-check {margin-top: 30px}
+
+@media screen and (max-width:640px){.component.mpPromos {display:none}}
+
+/*Pago y envio*/
+.announcMP{background:url("https://static.mercadoshops.com/static/images/announcement-icon.png") no-repeat scroll 0 0;height:18px;width:20px !important;padding-right: 5px !important}
+
+/*Carousel ChicoUI*/
+.paymethodsVipContent div.ch-carousel{width:350px;top:-20px;left:109px;}
+ul.payMethod{width:250px; height:35px; margin:0; padding: 0}
+ul.payMethod li, ul#payMethod li{height: 27px;text-indent: -9999px;margin:0 5px 0 0; padding:0;opacity:0.8;}
+ul#payMethod li{float:left;}
+ul.pmethod-carrito li{list-style-type: none}
+.customVipPaymethods {margin-top: 0; vertical-align: middle;}
+.paymethodsVipContent .ch-carousel-disabled{display:block;}
+
+/*Modals checkout*/
+form div.actions, #checkout-email div.actions{margin:5px 0; text-align: center}
+div.actions a#close-pay-offline{margin-left:10px;font-size: 13px}
+#shipping-pay-methods .payMethod li{float:left;}
+#shipping-pay-methods .payMethod {width:auto;margin:5px 0 15px 5px;padding-bottom: 15px}
+#shipping-pay-methods p.pay-safe{position: absolute;display: block;width: 106px;top: 57px;left:25px;}
+#shipping-pay-methods {padding-top: 15px}
+#checkout-user-data span.help{display:block;top:2px;}
+#checkout-email label{font-size: 13px}
+.ch-modal{width:auto !important;}
+.paymentSelectCustom {margin: 0 0 25px 0; clear:left;}
+.imgItemBuy, .dataItemBuy{float:left;}
+.imgItemBuy {width:90px; height:90px; display:block;padding:10px;}
+.imgItemBuy img{width:70px;height:70px;}
+.totalPrice, .ItemPaymentCustom{clear:left;}
+.dataItemBuy h2.itemTitle{border:0; font-size: 14px; font-family: Arial; font-weight: bold; display:inline-block;width:310px;}
+.dataItemBuy h2.itemTitle span{font-weight:normal;}
+.dataItemBuy{width:450px;}
+.itemBuyPrice{display: inline-block;width: 135px;text-align: right; font-size: 13px}
+.itemDataShipping{width:310px;display:inline-block;margin-top: 15px}
+.totalPrice{width:560px;text-align: right;padding: 10px 10px 10px 0; background:#FDFFE7; font-weight: bold;font-size: 13px}
+.ItemPaymentCustom{padding:15px 10px; width:550px;}
+.ItemPaymentCustom h3{font-weight: bold; color:#333; font-size: 14px}
+.ItemPaymentCustom h4{padding:0 0 0 10px;margin: 0 !important;font-size: 13px;font-weight: bold;}
+.ItemPaymentCustom p{padding:5px 10px 5px 10px;font-size: 13px}
+
+.totalTablePrice{
+	text-align: right;
+	background: #FDFFE7;
+	font-weight: bold
+}
+
+.shippingTablePrice{background:#F8F8F8;text-align: right;}
+.alignRight,
+table th.alignRight {
+	text-align: right
+}
+#ordersTable strong{font-size: 13px}
+
+/*paymethods-shipping*/
+.shippingPaymethodContent ul.customVipPaymethods{margin-bottom: 20px}
+
+#checkout-payment-step-1item li,
+#ordersTable li {
+	list-style: none;
+	font-size: 18px;
+}
+
+#checkout-payment-step-1item sup,
+#ordersTable sup {
+	font-size: 10px;
+	font-weight: bold;
+	vertical-align: middle;
+	line-height: 1em;
+}
+
+#checkout-payment-step-1item span.decimal,
+#ordersTable span.decimal {
+	font-size: 10px;
+}
+
+#ordersTable .promotionPrice span.decimal {
+	vertical-align: top;
+}
+
+#checkout-payment-step-1item del
+#ordersTable del,
+#checkout-payment-step-1item ins,
+#ordersTable ins, {
+	font-size: 19px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#checkout-payment-step-1item ins,
+#ordersTable ins {
+	display: block;
+	padding-top: 5px;
+	color: #009933;
+}
+
+#checkout-payment-step-1item tr.item td,
+#ordersTable tr.item td{
+	height: 80px;
+}
+
+#checkout-payment-step-1item .itemImage,
+#ordersTable .itemImage {
+	width: 110px;
+}
+
+#checkout-payment-step-1item .itemQty,
+#ordersTable .itemQty {
+	text-align: right;
+}
+
+#checkout-payment-step-1item .itemPrice,
+#ordersTable .itemPrice {
+	text-align: right;
+}
+
+#checkout-payment-step-1item .price,
+#ordersTable .price {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#checkout-payment-step-1item .orderDetails,
+#checkout-payment-step-1item .orderTotals,
+#ordersTable .orderDetails,
+#ordersTable .orderTotals {
+	text-align: right;
+}
+
+#checkout-payment-step-1item tr.orderPrice td,
+#ordersTable tr.orderPrice td {
+	background:#FDFFE7
+}
+
+/* Orders table (Checkout pay multiple items) */
+
+#ordersTable span.price,
+#ordersTable span.coma-price,
+#checkout-payment-step-1item span.coma-price {
+	color: inherit;
+}
+
+#ordersTable span.promotionPrice {
+	color: #009933;
+}
+
+.divradio{
+	float:left;
+	width: 300px;
+}
+.divradio input{
+	margin-right: 5px;
+}
+.clean{
+	clear:both;
+}
+.actions{
+	margin-top: 10px;
+}
+.ch-form-row textarea.textforseller{
+	height: auto;
+}
+.ayuda{
+	color: #555555;
+	font-size: 11px;
+	line-height: 11px;
+}

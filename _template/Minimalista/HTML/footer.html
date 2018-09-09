@@ -1,0 +1,70 @@
+<footer>
+
+	<ul class="contato">
+		<li>
+			<a rel="noopener" href="https://api.whatsapp.com/send?l=pt_pt&phone=5511991342197" target="_blank" title="Enviar mensagem no Whatsapp">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30.667 30.667" xml:space="preserve">
+					<path d="M30.667,14.939c0,8.25-6.74,14.938-15.056,14.938c-2.639,0-5.118-0.675-7.276-1.857L0,30.667l2.717-8.017   c-1.37-2.25-2.159-4.892-2.159-7.712C0.559,6.688,7.297,0,15.613,0C23.928,0.002,30.667,6.689,30.667,14.939z M15.61,2.382   c-6.979,0-12.656,5.634-12.656,12.56c0,2.748,0.896,5.292,2.411,7.362l-1.58,4.663l4.862-1.545c2,1.312,4.393,2.076,6.963,2.076   c6.979,0,12.658-5.633,12.658-12.559C28.27,8.016,22.59,2.382,15.61,2.382z M23.214,18.38c-0.094-0.151-0.34-0.243-0.708-0.427   c-0.367-0.184-2.184-1.069-2.521-1.189c-0.34-0.123-0.586-0.185-0.832,0.182c-0.243,0.367-0.951,1.191-1.168,1.437   c-0.215,0.245-0.43,0.276-0.799,0.095c-0.369-0.186-1.559-0.57-2.969-1.817c-1.097-0.972-1.838-2.169-2.052-2.536   c-0.217-0.366-0.022-0.564,0.161-0.746c0.165-0.165,0.369-0.428,0.554-0.643c0.185-0.213,0.246-0.364,0.369-0.609   c0.121-0.245,0.06-0.458-0.031-0.643c-0.092-0.184-0.829-1.984-1.138-2.717c-0.307-0.732-0.614-0.611-0.83-0.611   c-0.215,0-0.461-0.03-0.707-0.03S9.897,8.215,9.56,8.582s-1.291,1.252-1.291,3.054c0,1.804,1.321,3.543,1.506,3.787   c0.186,0.243,2.554,4.062,6.305,5.528c3.753,1.465,3.753,0.976,4.429,0.914c0.678-0.062,2.184-0.885,2.49-1.739   C23.307,19.268,23.307,18.533,23.214,18.38z" fill="#91DC5A"/>
+				</svg>
+				(11) 99134-2197
+			</a>
+		</li>
+		<li>
+			<a href="tel:551132727200" title="Ligue agora">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 792 792" xml:space="preserve">
+					<path d="M521.806,792c0,0,71.889,0,71.889-71.997V71.997C593.694,0,521.806,0,521.806,0H270.194c0,0-71.889,0-71.889,71.997   v648.006C198.306,792,270.194,792,270.194,792H521.806z M396,762.022c-19.841,0-35.944-16.104-35.944-35.944   c0-19.842,16.103-35.944,35.944-35.944c19.842,0,35.944,16.103,35.944,35.944C431.944,745.919,415.842,762.022,396,762.022z    M342.083,43.888c0-4.457,2.121-7.944,4.78-7.944h98.272c2.624,0,4.781,3.559,4.781,7.944v2.121c0,4.457-2.157,7.944-4.781,7.944   h-98.272c-2.624,0-4.78-3.559-4.78-7.944V43.888z M234.25,89.861h323.5v575.111h-323.5V89.861z" fill="#006DF0"/>
+				</svg>
+				(11) 3272-7200
+			</a>
+		</li>
+		<li>
+			<a href="mailto:atendimento@felap.com.br" title="Enviar email">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+						<path d="M467,61H45C20.218,61,0,81.196,0,106v300c0,24.72,20.128,45,45,45h422c24.72,0,45-20.128,45-45V106
+							C512,81.28,491.872,61,467,61z M460.786,91L256.954,294.833L51.359,91H460.786z M30,399.788V112.069l144.479,143.24L30,399.788z
+							 M51.213,421l144.57-144.57l50.657,50.222c5.864,5.814,15.327,5.795,21.167-0.046L317,277.213L460.787,421H51.213z M482,399.787
+							L338.213,256L482,112.212V399.787z"/>
+				</svg>
+				atendimento@felap.com.br
+			</a>
+		</li>
+	</ul>
+
+	<ul class="menu-footer">
+		#foreach( $menuItem in $menuItemList )
+			#if( $menuItem.isFirstItem )
+			<li>
+				<a href="$menuItem.target" title="$menuItem.name" class="link" data-name="$menuItem.name" data-isFirstItem="$menuItem.isFirstItem" data-target="$menuItem.target" data-noFollow="$menuItem.noFollow" data-linkTarget="$menuItem.linkTarget">$menuItem.name</a>
+			</li>
+			#else
+			<li>
+				<a href="$menuItem.target" #if($menuItem.noFollow) rel="nofollow" #end title="$menuItem.name" class="link" target="$menuItem.linkTarget" data-name="$menuItem.name" data-isFirstItem="$menuItem.isFirstItem" data-target="$menuItem.target" data-noFollow="$menuItem.noFollow" data-linkTarget="$menuItem.linkTarget">$menuItem.name</a>
+			</li>
+			#end
+		#end
+	</ul>
+
+	<ul class="pagto">
+		<li><img src="/IMAGES/ms.jpg" alt=""></li>
+		<li><img src="/IMAGES/selos.jpg" alt=""></li>
+	</ul>
+
+	<div class="copy">
+		<address>
+		    <p>
+		    	© 2015 Felap Máquinas e Equipamentos Ltda - CNPJ: 60.886.447/0001-31<br>
+				LOJA FÍSICA (11) 3272-7200 <br>
+				AV. ALCÂNTARA MACHADO, 190 - MOOCA, SÃO PAULO - SP, 03102-901<br>
+				Todos os Direitos Reservados.
+		    </p>
+		</address>
+		<p>
+			<a href="https://www.scoredesign.com.br" title="www.scoredesign.com.br" target="_blank">
+				<img src="/IMAGES/scoredesign.png" alt="www.scoredesign.com.br">
+			</a>
+		</p>
+	</div>
+
+</footer>
+
+<a id='scrollToTop' class="voltar-topo" href='#'></a>

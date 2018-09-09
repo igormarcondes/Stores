@@ -1,0 +1,423 @@
+<div class="ch-g1 main wrapper" role="main">
+	<div class="ch-g1 mainContent">
+		<div class="ch-container">
+			<div class="ch-container oneColumn clearfix">
+				
+				<section class="lazy slider">
+				  
+				    #if($showContent)
+				      #if($showContentImage)
+				        #foreach ($contentImage in $contentImageList)
+				        <div>
+				          #if($contentImage.hasLink)
+				            <a href="$contentImage.link" title="$contentImage.alt" class="banner-link">
+				              <img class="banner-img" data-lazy="$contentImage.src" data-srcset="$contentImage.src" alt="$contentImage.alt">
+				            </a>
+				          #else
+				              <img class="banner-img" data-lazy="$contentImage.src" data-srcset="$contentImage.src" alt="$contentImage.alt">
+				          #end
+				        </div>
+				        #end
+				      #elseif ($showContentText)
+				        $contentText
+				      #end
+				    #end
+				  
+				</div>
+
+				<!-- <ul class="categs">
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 01</span>
+							</a>
+						</h2>
+					</li>
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 02</span>
+							</a>
+						</h2>
+					</li>
+					</li>
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 03</span>
+							</a>
+						</h2>
+					</li>
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 04</span>
+							</a>
+						</h2>
+					</li>
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 05</span>
+							</a>
+						</h2>
+					</li>
+					<li>
+						<h2>
+							<a class="fer" href="#" title="">
+								<span>Categoria 06</span>
+							</a>
+						</h2>
+					</li>
+				</ul> -->
+
+				<section class="component itemGallery clearfix galeria-destaque">
+					
+					<div>
+						<h3 class="title-component">PRODUTOS EM DESTAQUE</h3>
+						<ul class="item-gallery">
+						#foreach ($outstandingItem in $outstandingItemList)
+							<li class="background">
+								<article class="clearfix">				
+									<h2><a title="$outstandingItem.title" href="$outstandingItem.url" class="title">$outstandingItem.title</a></h2>
+									<figure>
+										<a href="$outstandingItem.url" title="$outstandingItem.title" class="link">
+										#if( $outstandingItem.hasImages )
+											<img src="$outstandingItem.imageUrl" alt="$outstandingItem.title" title="$outstandingItem.title">
+										#else
+											<img alt="Sem Foto" title="Sem Foto" src="$outstandingItem.imageUrl"/>
+										#end
+										</a>
+										#if($outstandingItem.hasPromotion)
+											#if($outstandingItem.promotion.isDiscountTypePrice)
+												<p class="promoRibbonHomeStarred"><span>$outstandingItem.promotion.discountPercent</span>&#37; <strong>OFF</strong></p>
+											#elseif ($outstandingItem.promotion.isDiscountTypeQuantity && "BR" != "BR")
+												<p class="promoRibbonHomeStarred"><strong class="promoQtyBuy">$outstandingItem.promotion.quantityTake<span class="promoQtyBuyX">x</span>$outstandingItem.promotion.quantityBuy</strong></p>
+											#end
+										#end
+									</figure>
+									
+									#set ($galleryItem = $outstandingItem)
+									#set ($galleryPromotion = $outstandingItem.promotion)
+					
+										<dl id="homePrice" >
+										    #if ($galleryItem.hasPriceWithDiscount())<del class="ch-price price">#end
+										    		
+										    <dd>
+										        #if( $RegionalConfig.useDecimals($country) ) 
+										    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPrice()[1]</sup></span>
+										        #else
+										    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]</span>
+										        #end
+										    </dd>
+										    			
+										    #if ($galleryItem.hasPriceWithDiscount())</del>#end
+										      
+										    #if ($galleryItem.hasPriceWithDiscount())
+												#if ($galleryItem.hasPriceWithDiscount())<ins>#end 
+																	
+											    <dd>
+											        #if( $RegionalConfig.useDecimals($country) ) 
+											    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPriceWithDiscount()[1]</sup></span>
+											        #else
+											    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]</span>
+											        #end
+											    </dd>
+												
+												#if ($galleryItem.hasPriceWithDiscount())</ins>#end 
+										    #end
+										</dl>
+									
+					#set ($psjItem = $outstandingItem)
+										#if($shop.hasDeductions() && $psjItem && $psjItem.preferredInstallment.isInstallmentDeductionByCollector() && $psjItem.preferredInstallment.installments > 1)
+							<div class="semjuros-container">
+								#set($price = $PriceUtils.getInstallmentsPriceWithDeduction($shop.locale.country, $psjItem.currencyId, $psjItem.discountPrice, $psjItem.preferredInstallment.installments))
+
+								<i class="ch-icon-credit-card"></i>
+
+								$psjItem.preferredInstallment.installments
+								$i18n.tr("cuotas de")
+
+								#if($RegionalConfig.useDecimals($shop.locale.country))
+									<span class="ch-price price">
+										$CurrencyHelper.getCurrencySymbol($shop.locale)
+										$price[0]<span class="decimal">,</span><sup>$price[1]</sup>
+									</span>
+								#else
+									<span class="ch-price price">
+										$CurrencyHelper.getCurrencySymbol($shop.locale)
+										$price[0]
+									</span>
+								#end
+								<span id="semjuros-installment-text" class="semjuros ms-promo-text__lower"> $i18n.tr("Sin interés")</span>
+							</div>
+						#end
+									
+					#if($outstandingItem.hasPromotion && $outstandingItem.promotion.isDiscountTypeQuantity && "BR" == "BR")
+						<p class="promoTagMlb">Leve $outstandingItem.promotion.quantityTake pague $outstandingItem.promotion.quantityBuy</p>
+					#end
+					
+					#if($outstandingItem.hasPromotion && $outstandingItem.promotion.isFreeShipping && $outstandingItem.send)
+						<div class="promotionFreeShippingStarred">
+							<span class="arrow-left"></span>
+							<span class="freeShippingText">
+								Frete grátis
+							</span>
+						</div>
+					#end
+					<div class="itemFeatures">$outstandingItem.subtitle</div>
+				</article>
+			</li>
+		#end
+		</ul>	
+	</div>
+</section>
+
+<!-- MARCAS ****
+<section class="marcas">
+	
+	<div class="all">
+		<div class="ico-menu">
+		  <div class="bar1"></div>
+		  <div class="bar2"></div>
+		  <div class="bar3"></div>
+		</div>
+		<span>Ver todas as Marcas</span>
+	</div>
+
+	<ul class="ver-marcas">
+		<li>
+			<a href="#" title="">Marca 01</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 02</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 03</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 04</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 05</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 06</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 07</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 08</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 09</a>
+		</li>
+		<li>
+			<a href="#" title="">Marca 10</a>
+		</li>
+	</ul>
+
+</section> -->
+
+<div class="component newsProduct clearfix">
+	<span class="titulo">Ofertas da Semana</span>
+	<div class="ch-carousel" data-max-items="$newsMaxItemsPerPage">
+		<ul class="list-prod">
+			#foreach ($newsItem in $newsItemList)
+			<li>	
+				<figure>
+					<a href="$newsItem.url">
+						#if($newsItem.hasImages)
+						<img src="$newsItem.imageUrl" title="$newsItem.title" />
+						#else
+						<img src="$newsItem.imageUrl" alt="Sem Foto" title="Sem Foto">
+						#end
+						#if( $newsItem.showLastAvailable )
+							<span class="lastProd last-BR">Últimos disponíveis</span>
+						#end
+					</a>
+					#if($newsItem.hasPromotion)
+						#if($newsItem.promotion.isDiscountTypePrice)
+							<p class="promoRibbonNews"><span>$newsItem.promotion.discountPercent</span>&#37; <strong>OFF</strong></p>
+						#elseif ($newsItem.promotion.isDiscountTypeQuantity && "BR" != "BR")
+							<p class="promoRibbonNews"><strong class="promoQtyBuy">$newsItem.promotion.quantityTake<span class="promoQtyBuyX">x</span>$newsItem.promotion.quantityBuy</strong></p>
+						#end
+					#end
+				</figure>
+				
+				<h2>
+					<a href="$newsItem.url" title="$newsItem.title" class="title">$newsItem.title</a>
+				</h2>
+				
+				#set ($galleryItem = $newsItem)
+				#set ($galleryPromotion = $newsItem.promotion)
+				
+									<dl id="homePrice" >
+    #if ($galleryItem.hasPriceWithDiscount())<del class="ch-price price">#end
+    		
+    <dd>
+        #if( $RegionalConfig.useDecimals($country) ) 
+    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPrice()[1]</sup></span>
+        #else
+    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]</span>
+        #end
+    </dd>
+    			
+    #if ($galleryItem.hasPriceWithDiscount())</del>#end
+      
+    #if ($galleryItem.hasPriceWithDiscount())
+		#if ($galleryItem.hasPriceWithDiscount())<ins>#end 
+							
+	    <dd>
+	        #if( $RegionalConfig.useDecimals($country) ) 
+	    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPriceWithDiscount()[1]</sup></span>
+	        #else
+	    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]</span>
+	        #end
+	    </dd>
+		
+		#if ($galleryItem.hasPriceWithDiscount())</ins>#end 
+    #end
+</dl>
+								
+				#set ($psjItem = $newsItem)
+									#if($shop.hasDeductions() && $psjItem && $psjItem.preferredInstallment.isInstallmentDeductionByCollector() && $psjItem.preferredInstallment.installments > 1)
+	<div class="semjuros-container">
+		#set($price = $PriceUtils.getInstallmentsPriceWithDeduction($shop.locale.country, $psjItem.currencyId, $psjItem.discountPrice, $psjItem.preferredInstallment.installments))
+
+		<i class="ch-icon-credit-card"></i>
+
+		$psjItem.preferredInstallment.installments
+		$i18n.tr("cuotas de")
+
+		#if($RegionalConfig.useDecimals($shop.locale.country))
+			<span class="ch-price price">
+				$CurrencyHelper.getCurrencySymbol($shop.locale)
+				$price[0]<span class="decimal">,</span><sup>$price[1]</sup>
+			</span>
+		#else
+			<span class="ch-price price">
+				$CurrencyHelper.getCurrencySymbol($shop.locale)
+				$price[0]
+			</span>
+		#end
+		<span id="semjuros-installment-text" class="semjuros ms-promo-text__lower"> $i18n.tr("Sin interés")</span>
+	</div>
+#end
+				</li> 
+			#end
+		</ul>
+	</div>
+</div>
+<nav class="component itemGallery clearfix">
+	<h3 class="title-component">Produtos em Destaque</h3>
+		<ul class="item-gallery">
+		#foreach ($galleryItem in $galleryItemList)
+			<li class="background $promotionCssClass">
+				<article class="clearfix $promotionCssClass">
+					<h2>
+						<a href="$galleryItem.url" title="$galleryItem.title" class="title">$galleryItem.title</a>
+					</h2>
+					<ul class="itemData clearfix">
+						<li>
+							<figure class="background">
+								<a class="link" title="$galleryItem.title" href="$galleryItem.url">
+									#if( $galleryItem.hasImages )
+									<img class="" alt="$galleryItem.title" title="$galleryItem.title"     src="$galleryItem.imageUrl">
+									#else
+									<img class="" alt="Sem Foto" title="Sem Foto" src="$galleryItem.imageUrl">
+									#end
+									#if( $galleryItem.showLastAvailable )
+										<span class="lastProd last-BR">Últimos disponíveis</span>
+									#end
+								</a>
+								#if($galleryItem.hasPromotion)
+									#if($galleryItem.promotion.isDiscountTypePrice)
+										<p class="promoRibbonHome"><span>$galleryItem.promotion.discountPercent</span>&#37; <strong>OFF</strong></p>
+									#elseif ($galleryItem.promotion.isDiscountTypeQuantity && "BR" != "BR")
+										<p class="promoRibbonHome"><strong class="promoQtyBuy">$galleryItem.promotion.quantityTake<span class="promoQtyBuyX">x</span>$galleryItem.promotion.quantityBuy</strong></p>
+									#end
+								#end
+								
+							</figure>
+						</li>
+						
+						#set ($galleryPromotion = $galleryItem.promotion)
+													<dl id="homePrice" >
+    #if ($galleryItem.hasPriceWithDiscount())<del class="ch-price price">#end
+    		
+    <dd>
+        #if( $RegionalConfig.useDecimals($country) ) 
+    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPrice()[1]</sup></span>
+        #else
+    		<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPrice()[0]</span>
+        #end
+    </dd>
+    			
+    #if ($galleryItem.hasPriceWithDiscount())</del>#end
+      
+    #if ($galleryItem.hasPriceWithDiscount())
+		#if ($galleryItem.hasPriceWithDiscount())<ins>#end 
+							
+	    <dd>
+	        #if( $RegionalConfig.useDecimals($country) ) 
+	    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]<span class="decimal">,</span><sup>$galleryItem.getSplitPriceWithDiscount()[1]</sup></span>
+	        #else
+	    		<span class="ch-price price">$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId") $galleryItem.getSplitPriceWithDiscount()[0]</span>
+	        #end
+	    </dd>
+		
+		#if ($galleryItem.hasPriceWithDiscount())</ins>#end 
+    #end
+</dl>
+												
+						#set ($psjItem = $galleryItem)
+													#if($shop.hasDeductions() && $psjItem && $psjItem.preferredInstallment.isInstallmentDeductionByCollector() && $psjItem.preferredInstallment.installments > 1)
+	<div class="semjuros-container">
+		#set($price = $PriceUtils.getInstallmentsPriceWithDeduction($shop.locale.country, $psjItem.currencyId, $psjItem.discountPrice, $psjItem.preferredInstallment.installments))
+
+		<i class="ch-icon-credit-card"></i>
+
+		$psjItem.preferredInstallment.installments
+		$i18n.tr("cuotas de")
+
+		#if($RegionalConfig.useDecimals($shop.locale.country))
+			<span class="ch-price price">
+				$CurrencyHelper.getCurrencySymbol($shop.locale)
+				$price[0]<span class="decimal">,</span><sup>$price[1]</sup>
+			</span>
+		#else
+			<span class="ch-price price">
+				$CurrencyHelper.getCurrencySymbol($shop.locale)
+				$price[0]
+			</span>
+		#end
+		<span id="semjuros-installment-text" class="semjuros ms-promo-text__lower"> $i18n.tr("Sin interés")</span>
+	</div>
+#end
+												
+						#if($galleryItem.hasPromotion && $galleryItem.promotion.isDiscountTypeQuantity && "BR" == "BR")
+							<p class="promoTagMlb">Leve $galleryItem.promotion.quantityTake pague $galleryItem.promotion.quantityBuy</p>
+						#end
+						#if($galleryItem.hasPromotion && $galleryItem.promotion.isFreeShipping && $galleryItem.send)
+							<div class="promotionFreeShippingSmall">
+								<span class="arrow-left"></span>
+								<span class="freeShippingText">
+									Frete grátis
+								</span>
+							</div>
+						#end
+					</ul>
+				</article>
+			</li>
+		#end
+	</ul>
+</nav>
+
+</div>
+
+ <!-- promos mp main content -->
+		</div>
+	</div>
+</div>
