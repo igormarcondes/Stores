@@ -14,7 +14,7 @@ module.exports = function(grunt) {
          dist : {
            options : { style : 'compressed' },
            files : {
-             '<%= paths.custom %>css/personalized.css' : 'sass/main.scss',
+             'Minimalista/CSS/personalized.css' : 'sass/main.scss',
            }
          }
        }, // sass

@@ -1,0 +1,103 @@
+.header-bar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: #a90000;
+    top: 0;
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 13px 15px;
+        @include flexbox(flex, row, wrap, space-between, center, center);
+        * {
+            box-sizing: border-box;
+        }
+    }
+    a {
+        color: #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    i.fa {
+        vertical-align: middle;
+       &::before {
+          font-size: 28px;
+          color: #fff;
+       }
+    }
+    .social {
+        li {
+            float: left;
+            margin-right: 30px;
+            font-size: 0;
+        }
+    }
+    .atendimento {
+        li {
+            margin-left: 30px;
+            float: left;
+            &:first-child {
+                margin-left: 0;
+            }
+            .fa {
+                margin-right: 10px;
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+        }
+    }
+    .busca {
+        border-left: 1px solid #fff;
+        .inputField {
+            background: none;
+            border: 0;
+            color: #fff;
+            width: 300px;
+            height: 30px;
+            box-shadow: initial;
+            padding: 0 10px;
+            float: left;
+        }
+        .btn-search {
+            position: relative;
+            float: left;
+            margin: 6px 0 0;
+            .ch-btn {
+                position: absolute;
+                top:0;
+                left: 0;
+                z-index: 2;
+                opacity: 0;
+                height: auto;
+                border: 0;
+                border-radius: 0;
+            }
+            .icon {
+                &::after {
+                    @include icons("f002", 19px, #fff) ;
+                }
+            }
+        }
+    }
+    .carrinho {
+        display: block;
+        i.cart {
+            background: url("/images/ico_cart.png") no-repeat;
+            background-size: 100% auto;
+            width: 28px;
+            height: 25px;
+            color: #fff;
+            float: left;
+            margin: 0 5px 0 0;
+        }
+        a {
+            display: block;
+            color: #fff;
+            line-height: 29px;
+        }
+    }
+}
