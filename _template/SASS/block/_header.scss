@@ -1,12 +1,18 @@
+header {
+    .container {
+        max-width: $page-width;
+        margin: 0 auto;
+    }
+}
+
 .header-bar {
-    position: fixed;
     width: 100%;
     z-index: 10;
-    background: #a90000;
+    background: hsl(0, 100%, 33%);
     top: 0;
     .container {
-        max-width: 1440px;
         margin: 0 auto;
+        max-width: $page-width;
         padding: 13px 15px;
         @include flexbox(flex, row, wrap, space-between, center, center);
         * {
