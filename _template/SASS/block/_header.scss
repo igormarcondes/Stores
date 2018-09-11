@@ -1,7 +1,45 @@
 header {
+    font-family: $font-custom;
+    min-height: 220px;
     .container {
         max-width: $page-width;
         margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        @include flexbox(flex, row, wrap, center, center, center);
+    }
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        margin: 0;
+    }
+    .navigation-bar {
+        .container { 
+            padding: 40px 0 0 255px;          
+        }
+    }
+    .menu {
+        @include flexbox(flex, row, wrap, flex-start, center, center);
+        margin: 10px 0 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 100%;
+        li {
+            a {
+                line-height: 20px;
+                padding: 10px 20px;
+                font-size: 18px;
+                &:hover {
+                    text-decoration: none;
+                    color: #fff;
+                    background: #a80000;
+                }
+            }
+            ul {
+                position: relative;
+                display: none;
+            }
+        }       
     }
 }
 

@@ -1,0 +1,33 @@
+#page-HOME {
+    .main {
+        padding: 0;
+        width: 100%;
+        margin: -220px 0 0;
+        .container {
+            max-width: $page-width;
+            margin: 0 auto;
+        }
+    }
+}
+section.component {
+    @include clearFix;
+    > h2 {
+        font-family: $font-custom;
+        border-bottom: 5px solid #a90000;
+        width: 100%;
+        span {
+            font-size: 30px;
+        }
+    }
+    .ch-carousel {
+        clear: both;
+        width: 100;
+        ul {
+            li {
+                width: 20%;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+}
